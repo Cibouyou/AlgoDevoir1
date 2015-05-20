@@ -11,6 +11,7 @@
 #include <cstdlib>
 #include <ctime>
 #include "MergeSort.h"
+#include "BubbleSort.h"
 
 #define SIZE 10
 
@@ -28,9 +29,12 @@ int main(int argc, const char * argv[]) {
         cout << a[i] << " ";
     }
     
-    cout << endl << "\nSorted Array" << endl;
+    // cout << endl << "\nMerge Sorted Array" << endl;
+    // MergeSort *sorter = new MergeSort(a, b, SIZE);
+    // sorter->print();
     
-    MergeSort *sorter = new MergeSort(a, b, SIZE);
+    cout << endl << "\nBubble Sorted Array" << endl;
+    BubbleSort *sorter = new BubbleSort(a, SIZE);
     sorter->print();
     
     return 0;
