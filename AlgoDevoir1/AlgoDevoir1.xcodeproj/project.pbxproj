@@ -11,6 +11,7 @@
 		8FF776541B0D052F00472615 /* MergeSort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FF776521B0D052F00472615 /* MergeSort.cpp */; };
 		8FF776571B0D1B5C00472615 /* BubbleSort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FF776551B0D1B5C00472615 /* BubbleSort.cpp */; };
 		8FF7765A1B0D266300472615 /* QuickSort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FF776581B0D266300472615 /* QuickSort.cpp */; };
+		8FF7765D1B0D2C7100472615 /* QuickSortRand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FF7765B1B0D2C7100472615 /* QuickSortRand.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		8FF776561B0D1B5C00472615 /* BubbleSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleSort.h; sourceTree = "<group>"; };
 		8FF776581B0D266300472615 /* QuickSort.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QuickSort.cpp; sourceTree = "<group>"; };
 		8FF776591B0D266300472615 /* QuickSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickSort.h; sourceTree = "<group>"; };
+		8FF7765B1B0D2C7100472615 /* QuickSortRand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QuickSortRand.cpp; sourceTree = "<group>"; };
+		8FF7765C1B0D2C7100472615 /* QuickSortRand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickSortRand.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,8 @@
 				8FF776531B0D052F00472615 /* MergeSort.h */,
 				8FF776581B0D266300472615 /* QuickSort.cpp */,
 				8FF776591B0D266300472615 /* QuickSort.h */,
+				8FF7765B1B0D2C7100472615 /* QuickSortRand.cpp */,
+				8FF7765C1B0D2C7100472615 /* QuickSortRand.h */,
 			);
 			path = AlgoDevoir1;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FF776541B0D052F00472615 /* MergeSort.cpp in Sources */,
+				8FF7765D1B0D2C7100472615 /* QuickSortRand.cpp in Sources */,
 				8FF776571B0D1B5C00472615 /* BubbleSort.cpp in Sources */,
 				8FF7764C1B0D03E800472615 /* main.cpp in Sources */,
 				8FF7765A1B0D266300472615 /* QuickSort.cpp in Sources */,
@@ -253,6 +259,7 @@
 				8FF776511B0D03E800472615 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
