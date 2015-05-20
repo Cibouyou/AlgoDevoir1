@@ -12,6 +12,7 @@
 #include <ctime>
 #include "MergeSort.h"
 #include "BubbleSort.h"
+#include "QuickSort.h"
 
 #define SIZE 10
 
@@ -33,8 +34,12 @@ int main(int argc, const char * argv[]) {
     // MergeSort *sorter = new MergeSort(a, b, SIZE);
     // sorter->print();
     
-    cout << endl << "\nBubble Sorted Array" << endl;
-    BubbleSort *sorter = new BubbleSort(a, SIZE);
+    // cout << endl << "\nBubble Sorted Array" << endl;
+    // BubbleSort *sorter = new BubbleSort(a, SIZE);
+    // sorter->print();
+    
+    cout << endl << "\nQuick Sorted Array" << endl;
+    QuickSort *sorter = new QuickSort(a, SIZE);
     sorter->print();
     
     return 0;
