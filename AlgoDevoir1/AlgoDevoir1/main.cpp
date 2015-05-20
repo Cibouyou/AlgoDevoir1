@@ -14,6 +14,8 @@
 #include "BubbleSort.h"
 #include "QuickSort.h"
 #include "QuickSortRand.h"
+#include "Matrix.h"
+#include "\Strassen.h"
 
 #define SIZE 10
 
