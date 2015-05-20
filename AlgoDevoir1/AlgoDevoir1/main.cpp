@@ -7,9 +7,31 @@
 //
 
 #include <iostream>
+#include <climits>
+#include <cstdlib>
+#include <ctime>
+#include "MergeSort.h"
+
+#define SIZE 10
+
+using namespace std;
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    
+    int a[SIZE], b[SIZE];
+    
+    srand((unsigned) time(0));
+    
+    for(int i = 0; i < SIZE; i++){
+        a[i] = (rand() % 100) + 1;
+        
+        cout << a[i] << " ";
+    }
+    
+    cout << endl << "\nSorted Array" << endl;
+    
+    MergeSort *sorter = new MergeSort(a, b, SIZE);
+    sorter->print();
+    
     return 0;
 }
