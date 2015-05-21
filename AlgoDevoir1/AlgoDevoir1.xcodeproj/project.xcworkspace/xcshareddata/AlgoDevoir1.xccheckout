@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>9B15A82E-849A-4916-A2A8-555E7F655F3A</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>AlgoDevoir1</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>9738AAA0AC63F73B785E9F7880FC42DC8895545C</key>
 		<string>https://github.com/Cibouyou/AlgoDevoir1.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>AlgoDevoir1/AlgoDevoir1.xcodeproj/project.xcworkspace</string>
+	<string>AlgoDevoir1/AlgoDevoir1.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>9738AAA0AC63F73B785E9F7880FC42DC8895545C</key>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F8BDDDD1B0E51E5008A110E /* InsertionSort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F8BDDDB1B0E51E5008A110E /* InsertionSort.cpp */; };
 		8FF7764C1B0D03E800472615 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FF7764B1B0D03E800472615 /* main.cpp */; };
 		8FF776541B0D052F00472615 /* MergeSort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FF776521B0D052F00472615 /* MergeSort.cpp */; };
 		8FF776571B0D1B5C00472615 /* BubbleSort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FF776551B0D1B5C00472615 /* BubbleSort.cpp */; };
@@ -27,6 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8F8BDDDB1B0E51E5008A110E /* InsertionSort.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InsertionSort.cpp; sourceTree = "<group>"; };
+		8F8BDDDC1B0E51E5008A110E /* InsertionSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsertionSort.h; sourceTree = "<group>"; };
 		8FF776481B0D03E800472615 /* AlgoDevoir1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AlgoDevoir1; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF7764B1B0D03E800472615 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		8FF776521B0D052F00472615 /* MergeSort.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MergeSort.cpp; sourceTree = "<group>"; };
@@ -78,6 +81,8 @@
 				8FF776591B0D266300472615 /* QuickSort.h */,
 				8FF7765B1B0D2C7100472615 /* QuickSortRand.cpp */,
 				8FF7765C1B0D2C7100472615 /* QuickSortRand.h */,
+				8F8BDDDB1B0E51E5008A110E /* InsertionSort.cpp */,
+				8F8BDDDC1B0E51E5008A110E /* InsertionSort.h */,
 			);
 			path = AlgoDevoir1;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 				8FF776571B0D1B5C00472615 /* BubbleSort.cpp in Sources */,
 				8FF7764C1B0D03E800472615 /* main.cpp in Sources */,
 				8FF7765A1B0D266300472615 /* QuickSort.cpp in Sources */,
+				8F8BDDDD1B0E51E5008A110E /* InsertionSort.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
