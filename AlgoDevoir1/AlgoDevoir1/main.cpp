@@ -45,7 +45,7 @@ void fill_array(int *a, int *b, int *c, int size) {
 
 int main(int argc, const char * argv[]) {
 
-    int times[10][10];
+    float times[10][10];
     int dim = 0;
 
     clock_t t;
