@@ -15,6 +15,7 @@
 #include "QuickSort.h"
 #include "QuickSortRand.h"
 #include "InsertionSort.h"
+#include "HeapSort.h"
 #include "Matrix.h"
 
 #define SIZE 10
@@ -69,8 +70,12 @@ int main(int argc, const char * argv[]) {
     // QuickSortRand *sorter = new QuickSortRand(a, SIZE);
     // sorter->print();
     
-    cout << endl << "\nInsertion Sorted Array" << endl;
-    InsertionSort *sorter = new InsertionSort(a, SIZE);
+    // cout << endl << "\nInsertion Sorted Array" << endl;
+    // InsertionSort *sorter = new InsertionSort(a, SIZE);
+    // sorter->print();
+    
+    cout << endl << "\nHeap Sorted Array" << endl;
+    HeapSort *sorter = new HeapSort(a, SIZE);
     sorter->print();
     
     return 0;
