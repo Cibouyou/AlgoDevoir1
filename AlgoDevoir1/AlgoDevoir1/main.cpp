@@ -35,7 +35,7 @@ void reset_array(int *a, int *b, int size) {
 void fill_array(int *a, int *b, int *c, int size) {
     for(int i = 0; i < size; i++) {
         a[i] = (rand() % 100) + 1;
-        
+
         // cout << a[i] << " ";
     }
     
@@ -44,10 +44,12 @@ void fill_array(int *a, int *b, int *c, int size) {
 }
 
 int main(int argc, const char * argv[]) {
-    
-    float times[10][10];
+
+    int times[10][10];
+    int dim = 0;
+
     clock_t t;
-    
+
     srand((unsigned) time(0));
 
 	int input1[4][4] = {
@@ -61,14 +63,6 @@ int main(int argc, const char * argv[]) {
 			{ 64, 58, 47, 3 },
 			{ 55, 48, 34, 2 },
 			{ 45, 34, 27, 1 } };
-    
-    // Matrix inputM1(input1[0], 4);
-    // Matrix inputM2(input2[0], 4);
-    // cout << "Input A is:\n" << inputM1 << endl;
-    // cout << "Input B is:\n" << inputM2 << endl;
-    // Matrix result(4);
-    // result = inputM1 * inputM2;
-    // cout << "Result of A * B is:\n" << result << endl;
     
     for (int i = 1; i <= 10; i++) {
             
@@ -166,6 +160,20 @@ int main(int argc, const char * argv[]) {
         cout << endl << endl;
         
     }
-    
+
+
+    cout << "Choisissez la dimension des matrices :" << endl;
+    cin >> dim ;
+
+     Matrix m1(dim);
+     Matrix m2(dim);
+     cout << "Matrice A :\n" << m1 << endl;
+     cout << "Matrice B :\n" << m2 << endl;
+     Matrix result(4);
+     result = m1.strassen(m2);
+     cout << "Strassen de A * B:\n" << result << endl;
+
+    system("pause");
+
     return 0;
 }
