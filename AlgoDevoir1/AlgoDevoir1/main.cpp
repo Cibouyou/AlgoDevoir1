@@ -10,7 +10,6 @@
 #include <climits>
 #include <cstdlib>
 #include <ctime>
-#include <vector>
 #include <time.h>
 #include "MergeSort.h"
 #include "BubbleSort.h"
@@ -25,40 +24,31 @@
 
 using namespace std;
 
-void fill_array(int *a, int *b, int size) {
+void reset_array(int *a, int *b, int size) {
+    
+    for(int i = 0; i < size; i++) {
+        a[i] = b[i];
+    }
+    
+}
+
+void fill_array(int *a, int *b, int *c, int size) {
     for(int i = 0; i < size; i++) {
         a[i] = (rand() % 100) + 1;
         
         // cout << a[i] << " ";
     }
     
-    b = a;
+    reset_array(b, a, size);
+    reset_array(c, a, size);
 }
 
 int main(int argc, const char * argv[]) {
     
-    int times[10][10];
-    
-    int a1[SIZE], a2[2 * SIZE], a3[3 * SIZE], a4[4 * SIZE], a5[5 * SIZE];
-    int a6[6 * SIZE], a7[7 * SIZE], a8[8 * SIZE], a9[9 * SIZE], a10[10 * SIZE];
-    
-    int b1[SIZE], b2[2 * SIZE], b3[3 * SIZE], b4[4 * SIZE], b5[5 * SIZE];
-    int b6[6 * SIZE], b7[7 * SIZE], b8[8 * SIZE], b9[9 * SIZE], b10[10 * SIZE];
-    
+    float times[10][10];
     clock_t t;
     
     srand((unsigned) time(0));
-    
-    fill_array(a1, b1, 1 * SIZE);
-    fill_array(a2, b2, 2 * SIZE);
-    fill_array(a3, b3, 3 * SIZE);
-    fill_array(a4, b4, 4 * SIZE);
-    fill_array(a5, b5, 5 * SIZE);
-    fill_array(a6, b6, 6 * SIZE);
-    fill_array(a7, b7, 7 * SIZE);
-    fill_array(a8, b8, 8 * SIZE);
-    fill_array(a9, b9, 9 * SIZE);
-    fill_array(a10, b10, 10 * SIZE);
 
 	int input1[4][4] = {
 			{ 13, 3, 6, 3 },
@@ -80,35 +70,102 @@ int main(int argc, const char * argv[]) {
     // result = inputM1 * inputM2;
     // cout << "Result of A * B is:\n" << result << endl;
     
+    for (int i = 1; i <= 10; i++) {
+            
+        int a[i * SIZE], b[i * SIZE], c[i * SIZE];
+        int j = 0;
+        fill_array(a, b, c, i * SIZE);
+        
+        t = clock();
+        MergeSort *sorter1 = new MergeSort(a, c, i * SIZE);
+        t = clock() - t;
+        times[i - 1][j] = ((float) t ) / CLOCKS_PER_SEC;
+        j++;
+        free(sorter1);
+        reset_array(b, a, i * SIZE);
+        
+        t = clock();
+        BubbleSort *sorter2 = new BubbleSort(a, i * SIZE);
+        t = clock() - t;
+        times[i - 1][j] = ((float) t ) / CLOCKS_PER_SEC;
+        j++;
+        free(sorter2);
+        reset_array(b, a, i * SIZE);
+        
+        t = clock();
+        QuickSort *sorter3 = new QuickSort(a, i * SIZE);
+        t = clock() - t;
+        times[i - 1][j] = ((float) t ) / CLOCKS_PER_SEC;
+        j++;
+        free(sorter3);
+        reset_array(b, a, i * SIZE);
+        
+        // This one doesn't always work, I can't figure out the reason.
+        t = clock();
+        // QuickSortRand *sorter4 = new QuickSortRand(a, i * SIZE);
+        t = clock() - t;
+        times[i - 1][j] = ((float) t ) / CLOCKS_PER_SEC;
+        j++;
+        // free(sorter4);
+        // reset_array(b, a, i * SIZE);
+        
+        t = clock();
+        InsertionSort *sorter4 = new InsertionSort(a, i * SIZE);
+        t = clock() - t;
+        times[i - 1][j] = ((float) t ) / CLOCKS_PER_SEC;
+        j++;
+        free(sorter4);
+        reset_array(b, a, i * SIZE);
+        
+        t = clock();
+        HeapSort *sorter5 = new HeapSort(a, i * SIZE);
+        t = clock() - t;
+        times[i - 1][j] = ((float) t ) / CLOCKS_PER_SEC;
+        j++;
+        free(sorter5);
+        reset_array(b, a, i * SIZE);
+        
+        t = clock();
+        RadixSort *sorter6 = new RadixSort(a, i * SIZE);
+        t = clock() - t;
+        times[i - 1][j] = ((float) t ) / CLOCKS_PER_SEC;
+        j++;
+        free(sorter6);
+        reset_array(b, a, i * SIZE);
+        
+        t = clock();
+        sort(a, (a + (i * SIZE)));
+        t = clock() - t;
+        times[i - 1][j] = ((float) t ) / CLOCKS_PER_SEC;
+        j++;
+        reset_array(b, a, i * SIZE);
+        
+        t = clock();
+        sort_heap(a, (a + (i * SIZE)));
+        t = clock() - t;
+        times[i - 1][j] = ((float) t ) / CLOCKS_PER_SEC;
+        j++;
+        reset_array(b, a, i * SIZE);
+        
+        t = clock();
+        stable_sort(a, (a + (i * SIZE)));
+        t = clock() - t;
+        times[i - 1][j] = ((float) t ) / CLOCKS_PER_SEC;
+        j++;
+        reset_array(b, a, i * SIZE);
+        
+    }
     
-    // cout << endl << "\nMerge Sorted Array" << endl;
-    // MergeSort *sorter = new MergeSort(a, b, SIZE);
-    // sorter->print();
-    
-    // cout << endl << "\nBubble Sorted Array" << endl;
-    // BubbleSort *sorter = new BubbleSort(a, SIZE);
-    // sorter->print();
-    
-    // cout << endl << "\nQuick Sorted Array" << endl;
-    // QuickSort *sorter = new QuickSort(a, SIZE);
-    // sorter->print();
-    
-    // This one doesn't always work, I can't figure out the reason.
-    // cout << endl << "\nQuick Sorted Randomized Array" << endl;
-    // QuickSortRand *sorter = new QuickSortRand(a, SIZE);
-    // sorter->print();
-    
-    // cout << endl << "\nInsertion Sorted Array" << endl;
-    // InsertionSort *sorter = new InsertionSort(a, SIZE);
-    // sorter->print();
-    
-    // cout << endl << "\nHeap Sorted Array" << endl;
-    // HeapSort *sorter = new HeapSort(a, SIZE);
-    // sorter->print();
-    
-    // cout << endl << "\nRadix Sorted Array" << endl;
-    // RadixSort *sorter = new RadixSort(a, SIZE);
-    // sorter->print();
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            
+            printf("%f ", times[i][j]);
+            
+        }
+        
+        cout << endl << endl;
+        
+    }
     
     return 0;
 }
