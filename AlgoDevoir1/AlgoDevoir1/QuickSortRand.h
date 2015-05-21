@@ -22,6 +22,8 @@ private:
     int num;
     
     void sort(int*, int, int);
+    int random_partition(int*, int, int);
+    void swap(int*, int, int);
     
 };
 

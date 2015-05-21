@@ -8,14 +8,14 @@
 
 #include "QuickSortRand.h"
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
 QuickSortRand::QuickSortRand(int *_a, int _num) {
     this->a = _a;
     this->num = _num;
-    
-    srand((unsigned) time(0));
     
     sort(a, 0, num);
 }
@@ -28,34 +28,45 @@ void QuickSortRand::print() {
     cout << endl;
 }
 
-void QuickSortRand::sort(int *a, int left, int right) {
-    int i = left, j = right;
-    int tmp;
+void QuickSortRand::sort(int *a, int first, int last) {
+    int q;
+    if (first < last)
+    {
+        q = random_partition(a, first, last);
+        sort(a, first, q - 1);
+        sort(a, q + 1, last);
+    }
+}
+
+int QuickSortRand::random_partition(int *a, int first, int last) {
+    int pivot_loc;
     
-    /* Generating a random pivot */
-    int pivot_index = left + (rand() % (int)(right - left + 1));
-    int pivot = a[pivot_index];
-    cout << pivot_index << " ";
+    srand((unsigned) time(0));
     
-    /* Partition */
-    while (i <= j) {
-        while (a[i] < pivot)
+    pivot_loc = first + rand() % (last - first + 1);
+    
+    int pivot = a[pivot_loc];
+    
+    swap(a, pivot_loc, last);
+    pivot_loc = last;
+    
+    int i = first - 1;
+    
+    for(int j = first; j <= last - 1; j++) {
+        if(a[j] <= pivot) {
             i++;
-        while (a[j] > pivot)
-            j--;
-        if (i <= j) {
-            tmp = a[i];
-            a[i] = a[j];
-            a[j] = tmp;
-            i++;
-            j--;
+            swap(a, i, j);
         }
-    };
+    }
     
-    /* Recursion */
-    if (left < j)
-        sort(a, left, j);
-    if (i < right)
-        sort(a, i, right);
-    
+    swap(a, i + 1, pivot_loc);
+
+    return i + 1;
+}
+
+void QuickSortRand::swap(int *a, int i, int j) {
+    int temp;
+    temp = a[i];
+    a[i] = a[j];
+    a[j] = temp;
 }
