@@ -3,23 +3,46 @@
 //  AlgoDevoir1
 //
 
-#ifndef __AlgoDevoir1__Matrix__
-#define __AlgoDevoir1__Matrix__
+#ifndef MATRIX_H_
+#define MATRIX_H_
 
-#include <stdio.h>
 #include <iostream>
 
 class Matrix {
-
+	size_t width;
+	int *data;
 public:
-	Matrix(int**, int);
-	void print();
+	Matrix(size_t _width) : width(_width) {
+		this->data = new int[_width * _width];
+	}
+
+	Matrix(int *data, size_t _width) : Matrix(_width) {
+		for (size_t i = 0; i<width * width; ++i) {
+			this->data[i] = data[i];
+		}
+	}
+
+	virtual ~Matrix() {
+		if (this->data != NULL) {
+			delete[] this->data;
+			this->data = NULL;
+		}
+	}
+
+	size_t get_width() const{
+		return width;
+	}
+	Matrix & operator=(const Matrix & right);
+	Matrix operator+(const Matrix & right) const;
+	Matrix operator-(const Matrix & right) const;
+	Matrix operator*(const Matrix & right) const;
+	int & operator[](const size_t i);
+	const int & operator[](const size_t i) const;
 
 private:
-	int **tab;
-	int size;
-	void fill(int**, int);
-
+	Matrix strassen(const Matrix &b) const;
 };
 
-#endif /* defined(__AlgoDevoir1__Matrix__) */
+std::ostream & operator<<(std::ostream &os, Matrix &matrix);
+
+#endif /* MATRIX_H_ */
